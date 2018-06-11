@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/breweryview"
     android:clickable="true"
     android:layout_width="120dp"
@@ -18,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:scaleType="centerCrop"
-            android:background="#2d2d2d"/>
+            android:background="#2d2d2d" />
 
         <TextView
             android:id="@+id/brewery_name"
@@ -27,7 +26,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Breweries bitch"/>
+            android:text="Breweries bitch" />
 
 
     </LinearLayout>

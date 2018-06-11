@@ -25,7 +25,7 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
         private ImageView mBreweryImage;
         private CardView mBreweryView;
 
-        public ViewHolder(View itemView, final OnItemClickListener listener) {
+        public ViewHolder(View itemView) {
             super(itemView);
 
             mBreweryText = itemView.findViewById(R.id.brewery_name);
@@ -41,33 +41,31 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+                                         int viewType) {
         View view;
-        LayoutInflater mInflator = LayoutInflater.from(mContext);
-        view = mInflator.inflate(R.layout.cardview_item_brewery, parent, false);
-        return new ViewHolder(view, mListener);
+        LayoutInflater mInflater = LayoutInflater.from(mContext);
+        view = mInflater.inflate(R.layout.cardview_item_brewery, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         holder.mBreweryText.setText(mBrewery.get(position).getBrewery_name());
         Picasso.get().load(mBrewery.get(position).getBrewery_logo()).into(holder.mBreweryImage);
 
-//        click event
         holder.mBreweryView.setOnClickListener(new View.OnClickListener() {
-
             @Override
-            public void onClick(View, v) {
-                Intent intent = new Intent(mContext,Brewery_Activity.class);
+            public void onClick(View v) {
 
-                intent.putExtra("BreweryName",mBrewery.get(position).getBrewery_name());
-                intent.putExtra("City",mBrewery.get(position).getCity());
-                intent.putExtra("State",mBrewery.get(position).getState());
-                intent.putExtra("Address",mBrewery.get(position).getAddress());
-                intent.putExtra("Phone",mBrewery.get(position).getPhone());
-                intent.putExtra("Url",mBrewery.get(position).getUrl());
-//
+                Intent intent = new Intent(mContext, Brewery_Activity.class);
+                intent.putExtra("BreweryName", mBrewery.get(position).getBrewery_name());
+                intent.putExtra("City", mBrewery.get(position).getCity());
+                intent.putExtra("State", mBrewery.get(position).getState());
+                intent.putExtra("Address", mBrewery.get(position).getAddress());
+                intent.putExtra("Phone", mBrewery.get(position).getPhone());
+                intent.putExtra("Url", mBrewery.get(position).getUrl());
+                intent.putExtra("Image", mBrewery.get(position).getBrewery_logo());
                 mContext.startActivity(intent);
             }
         });
