@@ -2,6 +2,7 @@ package com.jriemer.beermemobile;
 
 public class Beer {
 
+    private int id;
     private String beer_name;
     private String style;
     private String abv;
@@ -10,13 +11,22 @@ public class Beer {
     private String beer_label;
 
 
-    public Beer(String beer_name, String style, String abv, String ibu, String description, String beer_label) {
+    public Beer(int id, String beer_name, String style, String abv, String ibu, String description, String beer_label) {
+        this.id = id;
         this.beer_name = beer_name;
         this.style = style;
         this.abv = abv;
         this.ibu = ibu;
         this.description = description;
         this.beer_label = beer_label;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBeer_name() {

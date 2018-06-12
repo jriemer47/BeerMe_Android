@@ -61,7 +61,7 @@ public class BeerMain extends AppCompatActivity {
                         public void run() {
                             Beer[] allBeers = new Gson().fromJson(myResponse, Beer[].class);
                             for (Beer beer : allBeers) {
-                                Beer testBeer = new Beer(beer.getBeer_name(), beer.getStyle(), beer.getAbv(), beer.getIbu(), beer.getDescription(), beer.getBeer_label());
+                                Beer testBeer = new Beer(beer.getId(), beer.getBeer_name(), beer.getStyle(), beer.getAbv(), beer.getIbu(), beer.getDescription(), beer.getBeer_label());
                                 System.out.println(beer.getBeer_label());
                                 lstBeer.add(testBeer);
                             }

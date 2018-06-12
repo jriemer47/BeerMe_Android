@@ -2,6 +2,7 @@ package com.jriemer.beermemobile;
 
 public class Brewery {
 
+    private int id;
     private String brewery_name;
     private String brewery_logo;
     private String address;
@@ -12,7 +13,9 @@ public class Brewery {
     private String url;
 
 
-    public Brewery(String brewery_name, String brewery_logo, String address, String city, String state, String zip, String phone, String url) {
+    public Brewery(int id, String brewery_name, String brewery_logo, String address, String city, String state, String zip, String phone, String url) {
+
+        this.id = id;
         this.brewery_name = brewery_name;
         this.brewery_logo = brewery_logo;
         this.address = address;
@@ -21,6 +24,14 @@ public class Brewery {
         this.zip = zip;
         this.phone = phone;
         this.url = url;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBrewery_name() {

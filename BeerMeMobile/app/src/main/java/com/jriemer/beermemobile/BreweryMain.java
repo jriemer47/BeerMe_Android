@@ -39,9 +39,7 @@ public class BreweryMain extends AppCompatActivity {
         myrv.setAdapter(breweryAdapter);
 
         OkHttpClient client = new OkHttpClient();
-
         String url = "http://10.0.2.2:8000/breweries";
-
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -64,8 +62,9 @@ public class BreweryMain extends AppCompatActivity {
                         public void run() {
                             Brewery[] allBreweries = new Gson().fromJson(myResponse, Brewery[].class);
                             for (Brewery brewery : allBreweries) {
-                                Brewery testBrewery = new Brewery(brewery.getBrewery_name(), brewery.getBrewery_logo(), brewery.getAddress(), brewery.getCity(), brewery.getState(), brewery.getZip(), brewery.getPhone(), brewery.getUrl());
+                                Brewery testBrewery = new Brewery(brewery.getId(), brewery.getBrewery_name(), brewery.getBrewery_logo(), brewery.getAddress(), brewery.getCity(), brewery.getState(), brewery.getZip(), brewery.getPhone(), brewery.getUrl());
                                 lstBrewery.add(testBrewery);
+                                System.out.println(testBrewery);
                             }
                             breweryAdapter.notifyDataSetChanged();
                         }
