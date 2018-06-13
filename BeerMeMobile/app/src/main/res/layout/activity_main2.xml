@@ -12,101 +12,44 @@
     app:contentPadding="4dp">
 
     <RelativeLayout
-        android:clickable="true"
         android:id="@+id/beer_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="150dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/beerscropped"
+        android:clickable="true"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#808080">
-
-        <ImageView
-            android:id="@+id/beer_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/download" />
-
-        <TextView
-            android:id="@+id/findbeer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/beer_image"
-            android:text="Find a Beer!"
-            android:textSize="28sp" />
+        app:layout_constraintTop_toTopOf="parent">
 
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:clickable="true"
         android:id="@+id/brewery_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="24dp"
-        android:background="#808080"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/breweriescropped"
+        android:clickable="true"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beer_search">
 
-
-        <ImageView
-            android:id="@+id/brewery_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/download" />
-
-        <TextView
-            android:id="@+id/findbrewery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/brewery_image"
-            android:text="Find a Brewery!"
-            android:textSize="28sp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/feature_brewery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="24dp"
-        android:background="#808080"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/randomcropped"
         android:clickable="true"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/brewery_search">
 
-
-        <ImageView
-            android:id="@+id/feature_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/download" />
-
-        <TextView
-            android:id="@+id/featurebrewery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/feature_image"
-            android:text="Feature Brewery!"
-            android:textSize="28sp" />
 
     </RelativeLayout>
 

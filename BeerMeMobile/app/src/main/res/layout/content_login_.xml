@@ -20,7 +20,7 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        android:text="Username"
+
         android:textSize="24dp" />
 
     <EditText
@@ -29,7 +29,7 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="210dp"
+        android:layout_marginBottom="180dp"
         android:background="#11000000"
         android:ems="10"
         android:hint="Password"
@@ -41,7 +41,7 @@
         android:layout_height="50dp"
         android:layout_above="@+id/textView3"
         android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="#424251"
+        app:cardBackgroundColor="#4D4C4C"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp">
 
@@ -66,16 +66,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="40dp"
+        android:paddingTop="10dp"
         android:text="New User?"
         android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="338dp"
-        android:layout_height="350dp"
+        android:layout_width="366dp"
+        android:layout_height="354dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-35dp"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="10dp"
         app:srcCompat="@drawable/logo" />
 </RelativeLayout>

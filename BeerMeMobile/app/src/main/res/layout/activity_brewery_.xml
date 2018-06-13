@@ -50,7 +50,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:text="Address"
-                android:textSize="18dp" />
+                android:textSize="18dp"/>
 
             <TextView
                 android:id="@+id/txtcity"
@@ -67,8 +67,6 @@
                 android:layout_marginTop="10dp"
                 android:text="State"
                 android:textSize="18dp" />
-
-
 
             <TextView
                 android:id="@+id/txtphone"
@@ -88,8 +86,12 @@
                 android:text="url"
                 android:textSize="12dp" />
 
+            <include layout="@layout/content_main"/>
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
+
 
 </FrameLayout>

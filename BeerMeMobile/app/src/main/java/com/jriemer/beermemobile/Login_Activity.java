@@ -24,13 +24,13 @@ public class Login_Activity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMain();
+                openProfile();
             }
         });
     }
 
-    public void openMain() {
-        Intent intent = new Intent(this, MainActivity2.class);
+    public void openProfile() {
+        Intent intent = new Intent(this, ProfileMain.class);
         startActivity(intent);
     }
 

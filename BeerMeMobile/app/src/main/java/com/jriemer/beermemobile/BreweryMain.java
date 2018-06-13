@@ -1,11 +1,16 @@
 package com.jriemer.beermemobile;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,6 +28,7 @@ public class BreweryMain extends AppCompatActivity {
     private List<Brewery> lstBrewery;
     private RecyclerView myrv;
     private BreweryAdapter breweryAdapter;
+    private ImageView toolbarImg;
 
 
     @Override
@@ -30,13 +36,19 @@ public class BreweryMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lstBrewery = new ArrayList<>();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        initCollapsingToolbar();
 
+        lstBrewery = new ArrayList<>();
         breweryAdapter = new BreweryAdapter(this, lstBrewery);
 
-        myrv = findViewById(R.id.recyclerview_id);
+        myrv = findViewById(R.id.contentMain);
         myrv.setLayoutManager(new GridLayoutManager(this, 3));
         myrv.setAdapter(breweryAdapter);
+
+        toolbarImg = findViewById(R.id.backdrop);
+        Picasso.get().load(R.drawable.breweriescropped).into(toolbarImg);
 
         OkHttpClient client = new OkHttpClient();
         String url = "http://10.0.2.2:8000/breweries";
@@ -64,12 +76,39 @@ public class BreweryMain extends AppCompatActivity {
                             for (Brewery brewery : allBreweries) {
                                 Brewery testBrewery = new Brewery(brewery.getId(), brewery.getBrewery_name(), brewery.getBrewery_logo(), brewery.getAddress(), brewery.getCity(), brewery.getState(), brewery.getZip(), brewery.getPhone(), brewery.getUrl());
                                 lstBrewery.add(testBrewery);
-                                System.out.println(testBrewery);
+                                System.out.println(testBrewery.getId());
                             }
                             breweryAdapter.notifyDataSetChanged();
                         }
                     });
 
+                }
+            }
+        });
+    }
+
+    private void initCollapsingToolbar() {
+        final CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle(" ");
+        AppBarLayout appBarLayout = findViewById(R.id.appbar);
+        appBarLayout.setExpanded(true);
+
+        // hiding & showing the title when toolbar expanded & collapsed
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbar.setTitle(" ");
+                    isShow = false;
                 }
             }
         });

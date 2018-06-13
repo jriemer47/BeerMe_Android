@@ -59,6 +59,7 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.ViewHold
             public void onClick(View v) {
 
                 Intent intent = new Intent(mContext, Brewery_Activity.class);
+                intent.putExtra("ID", mBrewery.get(position).getId());
                 intent.putExtra("BreweryName", mBrewery.get(position).getBrewery_name());
                 intent.putExtra("City", mBrewery.get(position).getCity());
                 intent.putExtra("State", mBrewery.get(position).getState());
