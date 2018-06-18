@@ -49,7 +49,8 @@ public class ProfileMain extends AppCompatActivity {
 
 
         OkHttpClient client = new OkHttpClient();
-        String url = "http://10.0.2.2:8000/users/1/beers";
+//        String url = "https://rocky-sierra-68795.herokuapp.com/users/1/beers";
+        String url = "http://43510223.ngrok.io/users/1/beers";
         Request request = new Request.Builder()
                 .url(url)
                 .build();

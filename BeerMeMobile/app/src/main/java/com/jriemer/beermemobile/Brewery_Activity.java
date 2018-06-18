@@ -54,16 +54,17 @@ public class Brewery_Activity extends AppCompatActivity {
 //        receive the data
         Intent intent = getIntent();
         int ID = intent.getExtras().getInt("ID");
-        String BreweryName = intent.getExtras().getString("Name");
+        String Name = intent.getExtras().getString("Name");
         String City = intent.getExtras().getString("City");
         String State = intent.getExtras().getString("State");
         String Address = intent.getExtras().getString("Address");
         String Phone = intent.getExtras().getString("Phone");
         String Url = intent.getExtras().getString("Url");
         String BreweryImage = intent.getExtras().getString("Image");
+        System.out.println(Name);
 
 //        setting the values
-        tvname.setText(BreweryName);
+        tvname.setText(Name);
         tvcity.setText(City);
         tvstate.setText(State);
         tvaddress.setText(Address);
@@ -73,7 +74,8 @@ public class Brewery_Activity extends AppCompatActivity {
 
 
         OkHttpClient client = new OkHttpClient();
-        String url = "http://10.0.2.2:8000/breweries/" + ID + "/beers";
+//        String url = "https://rocky-sierra-68795.herokuapp.com/breweries/" + ID + "/beers";
+        String url = "http://43510223.ngrok.io/breweries/" + ID + "/beers";
 
         Request request = new Request.Builder()
                 .url(url)

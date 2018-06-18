@@ -51,7 +51,8 @@ public class BreweryMain extends AppCompatActivity {
         Picasso.get().load(R.drawable.breweriescropped).into(toolbarImg);
 
         OkHttpClient client = new OkHttpClient();
-        String url = "http://10.0.2.2:8000/breweries";
+//        String url = "https://rocky-sierra-68795.herokuapp.com/breweries";
+        String url = "http://43510223.ngrok.io/breweries";
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -104,7 +105,7 @@ public class BreweryMain extends AppCompatActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    collapsingToolbar.setTitle("Breweries");
                     isShow = true;
                 } else if (isShow) {
                     collapsingToolbar.setTitle(" ");

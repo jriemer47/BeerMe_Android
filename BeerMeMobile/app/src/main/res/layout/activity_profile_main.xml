@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/userTop"
         android:layout_width="match_parent"
-        android:layout_height="268dp"
+        android:layout_height="229dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
 
@@ -22,17 +22,12 @@
 
             <ImageView
                 android:id="@+id/profilePic"
-                android:layout_width="189dp"
-                android:layout_height="134dp"
-                android:layout_marginBottom="9dp"
-                android:layout_marginEnd="9dp"
-                android:layout_marginLeft="9dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="9dp"
+                android:layout_width="176dp"
+                android:layout_height="92dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/profile" />
+                android:src="@drawable/profile2" />
 
         </RelativeLayout>
 
@@ -42,9 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/topProfile"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-10dp"
             android:text="Jon Riemer"
-            android:textSize="32sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/profileCity"
@@ -52,30 +46,41 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/profileName"
             android:layout_centerHorizontal="true"
-            android:paddingBottom="10dp"
+            android:paddingBottom="1dp"
             android:text="San Francisco, CA"
             android:textAllCaps="true"
             android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/profileFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileCity"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="1dp"
+            android:text="Favorite Style: IPA"
+            android:textAllCaps="true"
+            android:textSize="10sp" />
+
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="135dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="67dp"
+            android:layout_below="@+id/profileFavorite"
+            android:layout_marginStart="50dp"
             android:clickable="true"
             android:text="Grab a beer" />
 
         <Button
-            android:layout_width="135dp"
+            android:layout_width="114dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/button2"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/profileFavorite"
+            android:layout_marginEnd="50dp"
             android:clickable="true"
-            android:text="Post new beer" />
-
+            android:text="Post beer" />
 
 
         <ImageView
@@ -89,21 +94,22 @@
             android:src="@drawable/ic_settings_black_24dp" />
 
 
-
     </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/userMid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="209dp"
         android:background="@color/profilebackground"
         android:orientation="horizontal">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
@@ -118,9 +124,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4"
+                    android:text="8"
                     android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -153,9 +159,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
+                    android:text="5"
                     android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -188,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:text="16"
                     android:textColor="#FFFFFF"
-                    android:textSize="25sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"

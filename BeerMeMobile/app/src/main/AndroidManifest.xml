@@ -14,7 +14,7 @@
         <activity
             android:name=".Login_Activity"
             android:label="Login_Activity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +26,7 @@
         <activity android:name=".Brewery_Activity" />
         <activity android:name=".BeerMain" />
         <activity android:name=".BreweryMain" />
-        <activity android:name=".ProfileMain">
-
-
-        </activity>
+        <activity android:name=".ProfileMain" />
     </application>
 
 </manifest>

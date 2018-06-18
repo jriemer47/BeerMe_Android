@@ -3,31 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/breweryview"
     android:clickable="true"
-    app:cardCornerRadius="0dp"
     android:layout_width="120dp"
-    android:layout_height="190dp"
+    android:layout_height="200dp"
     android:layout_margin="5dp">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="202dp">
 
 
         <ImageView
             android:id="@+id/brewery_image"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="137dp"
             android:scaleType="centerCrop"
             android:background="#2d2d2d" />
 
         <TextView
             android:id="@+id/brewery_name"
             android:textColor="#2d2d2d"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Breweries bitch" />
 
 

@@ -15,7 +15,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public RelativeLayout beersearch;
     public RelativeLayout brewerysearch;
-    public RelativeLayout featuresearch;
+    public RelativeLayout randomsearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,6 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-
         brewerysearch = findViewById(R.id.brewery_search);
         brewerysearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +38,15 @@ public class MainActivity2 extends AppCompatActivity {
                 openBreweryPage();
             }
         });
+
+//        randomsearch = findViewById(R.id.random_brewery);
+//        randomsearch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openRandom();
+//            }
+//        });
+
     }
 
     public void openBeerPage() {
@@ -50,4 +58,9 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = new Intent(this, BreweryMain.class);
         startActivity(intent);
     }
+
+//    public void openRandom() {
+//        Intent intent = new Intent(this, Random_Brewery.class);
+//        startActivity(intent);
+//    }
 }

@@ -13,6 +13,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_login_" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_login_" />
 
 </android.support.design.widget.CoordinatorLayout>

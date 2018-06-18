@@ -46,6 +46,7 @@ public class BeerMain extends AppCompatActivity {
 
         myrv = findViewById(R.id.contentMain);
         myrv.setLayoutManager(new GridLayoutManager(this, 3));
+        System.out.println(this);
         myrv.setAdapter(beerAdapter);
 
 
@@ -57,7 +58,8 @@ public class BeerMain extends AppCompatActivity {
 
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://10.0.2.2:8000/beers";
+//        String url = "https://rocky-sierra-68795.herokuapp.com/beers";
+        String url = "http://43510223.ngrok.io/beers";
 
         Request request = new Request.Builder()
                 .url(url)
@@ -112,10 +114,10 @@ public class BeerMain extends AppCompatActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    collapsingToolbar.setTitle("");
                     isShow = true;
                 } else if (isShow) {
-                    collapsingToolbar.setTitle(" ");
+                    collapsingToolbar.setTitle("");
                     isShow = false;
                 }
             }
